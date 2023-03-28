@@ -120,3 +120,18 @@ const task8 = (arr) => {
 }
 
 console.log('задача 8: ', task8([1, 2, [3, 4, [5]]]))
+
+// 9
+// Напишите функцию, которая разделяет массив на части заданного размера.
+//     Ожидаемый результат: ([1, 2, 3, 4, 5], 2) => [[1, 2], [3, 4], [5]]
+
+const task9 = (arr, n) => {
+    const newArr = []
+    while (arr.length > 0) {
+        newArr.push(arr.splice(0, n))
+    }
+    return newArr
+
+}
+
+console.log('задача 9: ', task9([1, 2, 3, 4, 5], 2))
