@@ -65,3 +65,21 @@ const task5 = (arr, a, b) => {
 }
 
 console.log('задача 5: ', task5([1, 2, 3, 1, 2], 1, 2))
+
+// 6
+// Напишите функцию, которая убирает повторяющиеся значения.
+//     Ожидаемый результат: [1, 2, 3, 1, 2] => [1, 2, 3]
+
+const task6 = (arr) => {
+    const newArr = []
+    const obj = {}
+    for (let i = 0; i < arr.length; i++) {
+       if (!obj[arr[i]]) {
+           obj[arr[i]] = 1
+           newArr.push(arr[i])
+       }
+    }
+    return newArr
+}
+
+console.log('задача 6: ', task6([1, 2, 3, 1, 2]))
