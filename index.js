@@ -27,7 +27,7 @@ const task2 = (arr) => {
     return i
 }
 
-console.log('задача 2: ' + task2([2,2,4,5,5,5]))
+console.log('задача 2: ' + task2([2, 2, 4, 5, 5, 5]))
 
 // 3
 // Напишите функцию, которая очищает массив от нежелательных значений,
@@ -36,7 +36,7 @@ console.log('задача 2: ' + task2([2,2,4,5,5,5]))
 //     [0, 1, false, 2, undefined, '', 3, null] => [1, 2, 3]
 
 const task3 = (arr) => {
-   return arr.filter(el => el)
+    return arr.filter(el => el)
 }
 
 console.log('задача 3: ' + task3([0, 1, false, 2, undefined, '', 3, null]))
@@ -74,10 +74,10 @@ const task6 = (arr) => {
     const newArr = []
     const obj = {}
     for (let i = 0; i < arr.length; i++) {
-       if (!obj[arr[i]]) {
-           obj[arr[i]] = 1
-           newArr.push(arr[i])
-       }
+        if (!obj[arr[i]]) {
+            obj[arr[i]] = 1
+            newArr.push(arr[i])
+        }
     }
     return newArr
 }
@@ -101,3 +101,22 @@ const task7 = (arr1, arr2) => {
 }
 
 console.log('задача 7: ', task7([1, 2, 3], [1, 2, 3]))
+
+// 8
+// Напишите функцию, которая преобразует глубокий массив в одномерный.
+//     Задачу нужно решить двумя способами!
+//     Ожидаемый результат: [1, 2, [3, 4, [5]]] => [1, 2, 3, 4, 5]
+
+const task8 = (arr) => {
+    // первый способ:
+    // return arr.flat(Infinity)
+
+    //второй способ:
+    while (arr.some(el => Array.isArray(el))) {
+        arr = [].concat(...arr)
+    }
+    return arr
+
+}
+
+console.log('задача 8: ', task8([1, 2, [3, 4, [5]]]))
